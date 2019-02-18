@@ -13,6 +13,6 @@ echo $id
 -S ${id}.hisat.sam  2>${id}.hisat.align.log; 
 										
 samtools view -bhS -q 30  ${id}.hisat.sam > ${id}.hisat.bam   
-samtools sort   ${id}.hisat.bam ${id}.hisat.sorted  ## prefix for the output   
+samtools sort   ${id}.hisat.bam -o ${id}.hisat.sorted  ## prefix for the output   
 samtools index ${id}.hisat.sorted.bam  
 done <$1 
